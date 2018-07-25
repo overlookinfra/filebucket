@@ -174,7 +174,7 @@ def Create1KBFile(filename):
     TARGETFILE = None
     
     #The buffer to write to the file.
-    bytBuffer = "\xff" * 1024
+    bytBuffer = b"\xff" * 1024
 
     #Open the target file handle in write mode
     try:
@@ -267,7 +267,7 @@ def main():
                 Create1KBFile(RandomNames('', '', 1)[0])
             else:
                 CreateFile(RandomNames('', '', 1)[0], objOptions.seed, objOptions.size)
-    except RuntimeError, ex:
+    except RuntimeError as ex:
         print(("Error: " + ex[0]))
         sys.exit(1)
         
